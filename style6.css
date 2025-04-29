@@ -1,0 +1,150 @@
+/* Base Reset and Global Styles */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1B5E20;
+    --background-color: #F5F7F5;
+    --text-color: #333;
+    --white: #FFF;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+}
+
+/* General Body Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background: var(--background-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* App Container */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: var(--white);
+}
+
+/* Header Section Styles */
+.header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    z-index: 2;
+}
+
+.nav-back {
+    margin-bottom: 0.5rem;
+}
+
+.back-button {
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #E8F5E9;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.system-title {
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Map Container */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Set fixed height for map */
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center; /* Center the map content horizontally */
+    align-items: center; /* Center the map content vertically */
+    overflow: hidden;
+}
+
+/* Map Image */
+.map-frame {
+    width: 100%;
+    height: 100%;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+/* Location Marker Styles */
+.location-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.marker-dot {
+    width: 16px;
+    height: 16px;
+    background-color: #FF4444;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.marker-label {
+    background-color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .map-container {
+        height: 500px; /* Increase map height on larger screens */
+    }
+}

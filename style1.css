@@ -1,0 +1,151 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+  }
+  
+  /* === Web App Shell === */
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  /* === Top Navigation === */
+  .top-bar {
+    background-color: #003c04;
+    color: white;
+    padding: 15px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* === Main Content === */
+  .main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  /* === Card / Panel === */
+  .content-box {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* === Logo Section === */
+  .logo-section {
+    margin-bottom: 30px;
+  }
+  
+  .logo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  /* === Title === */
+  h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    line-height: 1.2;
+  }
+  
+  /* === Button Section === */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgb(22, 22, 22);
+  }
+  
+  .primary-btn {
+    background-color: #003c04;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+  }
+  
+  .primary-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(52, 152, 219, 0.3);
+  }
+  
+  .secondary-btn {
+    background-color: transparent;
+    color: #3498db;
+    padding: 15px 30px;
+    border: 2px solid #3b5fe5;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .secondary-btn:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  /* === Bottom Navigation (optional) === */
+  .bottom-nav {
+    background-color: #1a1a1a;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+  }
+  
+  /* === Responsive === */
+  @media (max-width: 600px) {
+    .content-box {
+      padding: 30px 20px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .logo {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  

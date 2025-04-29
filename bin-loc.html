@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Trash & Recycling System</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #e8f5e9, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    header .back-button {
+      background: white;
+      color: #2e7d32;
+      padding: 5px 12px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #1b5e20;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    #suggestion-box {
+      background-color: #424242;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .bins {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .bin {
+      flex: 1;
+      margin: 0 5px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 10px;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .green { background-color: #388e3c; }
+    .blue { background-color: #1976d2; }
+    .red { background-color: #d32f2f; }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 10px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="back-button" onclick="window.location.href='home.html'">← Back</div>
+    <h1>Smart Trash System</h1>
+  </header>
+
+  <main>
+    <div class="section">
+      <h2>Select or Scan Waste</h2>
+      <select id="waste-type">
+        <option value="paper">Paper</option>
+        <option value="food">Food Waste</option>
+        <option value="plastic">Plastic</option>
+        <option value="metal">Metal</option>
+      </select>
+
+      <div id="suggestion-box">
+        Suggested Bin for <span id="selected-type">Paper</span>:
+        <strong id="bin-type">Recyclable</strong><br>
+        <a href="explore3.html">
+        <button>Find Nearest Bin</button>
+    </a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Bin Types</h2>
+      <div class="bins">
+        <div class="bin green">Biodegradable</div>
+        <div class="bin blue">Non-Biodegradable</div>
+        <div class="bin red">Recyclable</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Smart Trash System
+  </footer>
+
+  <script>
+    const wasteTypeSelect = document.getElementById('waste-type');
+    const selectedType = document.getElementById('selected-type');
+    const binType = document.getElementById('bin-type');
+
+    const wasteToBin = {
+      paper: 'Recyclable',
+      food: 'Biodegradable',
+      plastic: 'Non-Biodegradable',
+      metal: 'Recyclable'
+    };
+
+    wasteTypeSelect.addEventListener('change', () => {
+      const type = wasteTypeSelect.value;
+      selectedType.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+      binType.textContent = wasteToBin[type];
+    });
+
+    function findNearestBin() {
+      const type = wasteTypeSelect.value;
+      alert(`Finding nearest ${wasteToBin[type]} bin for ${type}...`);
+    }
+  </script>
+
+</body>
+</html>

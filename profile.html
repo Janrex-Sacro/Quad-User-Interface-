@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="style4.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <a href="home.html">&lt;</a>
+    <h2><a href="profile-page.html">Profile</a></h2>
+  </div>
+
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <div class="profile-pic">
+      <div class="edit-icon">✏️</div>
+    </div>
+    <div class="profile-name">Admin</div>
+    <a href="A-login.html">
+      <div class="signup-btn">Sign up</div>
+    </a>
+  </div>
+
+  <!-- General Settings -->
+  <a href="general-settings.html">
+    <div class="section-title">General Settings</div>
+  </a>
+  <div class="settings">
+    <div class="item">
+      <div class="icon-text">
+        <i>⚙️</i>
+        <div>
+          <div>Mode</div>
+          <small>Dark & Light</small>
+        </div>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="mode-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+   
+
+    <a href="language.html">
+      <div class="item">
+        <div class="icon-text"><i>🌐</i> Language</div>
+        <i>›</i>
+      </div>
+    </a>
+  </div>
+
+  <!-- Information Section -->
+  <a href="information.html">
+    <div class="section-title">Information</div>
+  </a>
+  <div class="info">
+    <a href="about copy 2.html">
+      <div class="item">
+        <div class="icon-text"><i>📱</i> About App</div>
+        <i>›</i>
+      </div>
+    </a>
+
+    <a href="terms-copy.html">
+      <div class="item">
+        <div class="icon-text"><i>📄</i> Terms & Conditions</div>
+        <i>›</i>
+      </div>
+    </a>
+  </div>
+
+  <!-- Dark Mode Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('mode-toggle');
+
+      // Load saved preference
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggle.checked = true;
+      }
+
+      // Toggle dark mode
+      toggle.addEventListener('change', function () {
+        if (this.checked) {
+          document.body.classList.add('dark-mode');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.body.classList.remove('dark-mode');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

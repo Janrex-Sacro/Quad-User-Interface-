@@ -1,0 +1,107 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #e9f5e2, #ffffff);
+    overflow-y: auto; /* Allow vertical scrolling */
+  }
+  
+  /* App Shell */
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #1b4d1b;
+    color: white;
+    padding: 20px 40px;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px; /* Adds spacing between back button and title */
+  }
+  
+  /* Main Content Section */
+  .main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Content Container */
+  .container {
+    background-color: white;
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  
+  /* Content Text Alignment */
+  .content {
+    text-align: left; /* Ensures content is aligned to the left */
+    padding: 20px;
+  }
+  
+  h2, h3 {
+    margin-bottom: 15px; /* Adds space below the headings */
+    color: #1b4d1b;
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem; /* Increases size for the main title */
+    font-weight: bold;
+  }
+  
+  h3 {
+    margin-top: 20px;
+  }
+  
+  ul {
+    list-style-type: none; /* Removes default list bullet points */
+    padding-left: 20px; /* Indents list items */
+  }
+  
+  ul li {
+    margin-bottom: 10px; /* Adds spacing between list items */
+  }
+  
+  ul li strong {
+    font-weight: bold; /* Bold text for roles */
+  }
+  
+  /* Optional Footer Section */
+  .footer {
+    background-color: #f2f2f2;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+  }
+  

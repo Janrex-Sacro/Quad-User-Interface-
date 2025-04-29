@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bin Status Sensors</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #e9f1e8, #dce8d7);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .back-button {
+      font-size: 18px;
+      color: green;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .header-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: green;
+    }
+
+    .status-box {
+      background: #1e1e1e;
+      color: white;
+      padding: 20px;
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
+    .status-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .status-subtitle {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #55aa55;
+      font-weight: bold;
+    }
+
+    .sensor {
+      background-color: #3a3a3a;
+      border-radius: 30px;
+      padding: 15px 25px;
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .toggle {
+      width: 40px;
+      height: 22px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .toggle.active {
+      background-color: #4cff4c;
+    }
+
+    .toggle.inactive {
+      background-color: #ff4c4c;
+    }
+
+    .toggle .circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      background: #1e1e1e;
+      padding: 15px 0;
+      border-top: 1px solid #444;
+    }
+
+    .bottom-nav div {
+      color: green;
+      text-align: center;
+      flex: 1;
+    }
+
+    .bottom-nav div i {
+      font-size: 22px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .header-title {
+        font-size: 20px;
+      }
+
+      .status-title,
+      .status-subtitle {
+        font-size: 18px;
+      }
+
+      .sensor {
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-left">
+        <a href="A-Bin-status.html" class="back-button">←</a>
+        <div class="header-title">HOME</div>
+      </div>
+    </div>
+
+    <!-- Sensors Content -->
+    <div class="status-box">
+      <div class="status-title">Bin Status</div>
+      <div class="status-subtitle">Sensors</div>
+
+      <div class="sensor">
+        <span>Cis - Biodegradable (Active)</span>
+        <div class="toggle active">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="sensor">
+        <span>Admin BLDG. - Recyclable (Active)</span>
+        <div class="toggle active">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="sensor">
+        <span>Cas - Biodegradable (Inactive)</span>
+        <div class="toggle inactive">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="sensor">
+        <span>Cte - Non-Biodegradable (Active)</span>
+        <div class="toggle active">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
