@@ -1,4 +1,4 @@
-QUAD-UI
+QUAD-UI (Smart Trash and Recycling System)
 
 LEADER: SACRO, JANREX C.
 
